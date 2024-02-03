@@ -158,27 +158,46 @@ main {
 } */
 
 /* PROROFILE */
-.gallery-profile {
-  /* display: grid; */
-  /* grid-template-columns: repeat(3, 1fr); */
-  display: flex;
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr, 1fr;
+  grid-template-areas: 
+  'one two two'
+  'one two two';
   gap: 20px;
   justify-content: center;
   justify-items: center;
-  align-items: center;
-}
-
-.grid-item-profile {
-  overflow: hidden;
+  /* align-items: center; */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
-  width: 50%;
 }
 
-.grid-item-profile img {
-  width: 100%;
+
+.grid-profile-photo {
+  display: grid;
+  grid-area: one;
+}
+
+.grid-profile-content {
+  display: grid;
+  padding: 20px;
+  grid-area: two;
+  
+  }
+.grid-profile-photo img {
+  width: 80%;
   height: auto;
-  border-radius: 8px;
-  display: block;
+  border-radius: 8px; 
+  display: block; */
+}
+
+
+
+
+
+/* /* MEDIA QUERY  */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* Switch to a single column on smaller screens */
+  }
 }
