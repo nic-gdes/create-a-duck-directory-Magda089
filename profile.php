@@ -27,7 +27,7 @@ include('./asset/components/head.php');
                         <img src="./asset/images/Duck-Coatk - Redbubble 2024-01-31 14-19-59.png" alt="Duck wearing coat">
                         <div class="grid-profile-content">
                             <h2>Duckington Frostwell</h2>
-                            <p><b>Fav Food:</b> Sourdough Breadcrumbs</p>
+                            <p><b>Favorite Food:</b> Sourdough Breadcrumbs</p>
                             <h3>Biography</h3>
                             <!-- <p>Quackwell is always wrapped up in his favorite Victorian-style coat, ensuring he's both cozy and stylish. With a blend of timeless charm and feather-friendly warmth, this frosty fellow sets the trend for winter chic.</p> -->
                             <p>Born in the heart of the frosty pond, Duckington Frostwell emerged into the world with a penchant for chilly elegance. </p>

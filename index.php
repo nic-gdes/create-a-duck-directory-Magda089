@@ -20,6 +20,10 @@ include('./asset/components/head.php');
                 <img src="./asset/images/Duck-Coatk - Redbubble 2024-01-31 14-19-59.png" alt="Duck Name 1">
                 <div class="grid-item-content">
                 <H2><a href="./profile.php">Duckington Frostwell</a></H2>
+                <h3>Favorite Foods</h3>
+                    <p>Aquatic Plants</p>
+                    <p>Insects</p>
+                    <p>Seeds and Grains</p>
                     <h3>Favorite Things to Do</h3>
                     <p>Strolling by the frosty pond, enjoying chilly swims.</p>
                     <h3>Favorite Clothes</h3>
@@ -30,6 +34,10 @@ include('./asset/components/head.php');
                 <img src="./asset/images/duck-hat.jpeg" alt="Duck Name 2">
                 <div class="grid-item-content">
                     <h2>Harper Quackley</h2>
+                    <h3>Favorite Foods</h3>
+                    <p>Worms</p>
+                    <p>Small Fish</p>
+                    <p>Amphibians</p>
                     <h3>Favorite Things to Do</h3>
                     <p>Tending to the duck farm, splashing in puddles after a good rain.</p>
                     <h3>Favorite Clothes</h3>
@@ -40,6 +48,10 @@ include('./asset/components/head.php');
                 <img src="./asset/images/duck-she.jpeg" alt="Duck Name 3">
                 <div class="grid-item-content">
                     <h2>Reginald Drizzleton</h2>
+                    <h3>Favorite Foods</h3>
+                    <p>Algae</p>
+                    <p>Small Fish</p>
+                    <p>Human-Provided Foods</p>
                     <h3>Favorite Things to Do</h3>
                     <p>Sipping tea by the English garden, strutting down the duckwalk.</p>
                     <h3>Favorite Clothes</h3>
