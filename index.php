@@ -12,7 +12,7 @@ include('./asset/components/head.php');
     include('./asset/components/navigation.php');
     ?>
     <main>
-        <h1> Cool Duck Clothes!</h1>
+        <h1>My Ducks</h1>
         <h2></h2>
         <p>Check out our awesome collection of duck clothes. From snazzy bow ties to stylish hats, your ducks can look as cool as can be. </p>
         <div class="gallery">
