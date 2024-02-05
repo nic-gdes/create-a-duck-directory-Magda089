@@ -170,10 +170,9 @@ main {
 /* PROROFILE */
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr, 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-areas:
-    'img text text'
-    'img text text';
+    'img text';
   gap: 20px;
   justify-content: center;
   justify-items: center;
@@ -184,12 +183,12 @@ main {
 
 
 .grid-profile-photo {
-  display: grid;
+  /* display: grid; */
   grid-area: img;
 }
 
 .grid-profile-content {
-  display: grid;
+  /* display: grid; */
   padding: 20px;
   grid-area: text;
 }

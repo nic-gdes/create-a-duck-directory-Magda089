@@ -25,7 +25,8 @@ include('./asset/components/head.php');
                 <div class="grid-container">
                     <div class="grid-profile-photo">
                         <img src="./asset/images/Duck-Coatk - Redbubble 2024-01-31 14-19-59.png" alt="Duck wearing coat">
-                        <div class="grid-profile-content">
+                    </div>
+                    <div class="grid-profile-content">
                             <h2>Duckington Frostwell</h2>
                             <p><b>Favorite Food:</b> Sourdough Breadcrumbs</p>
                             <h3>Biography</h3>
@@ -34,7 +35,6 @@ include('./asset/components/head.php');
                             <p>From the earliest days, this dapper duck showcased a flair for winter fashion, donning his first Victorian-style coat at a tender age.</p>
                             <p>Duckington's frosty charisma and love for winter wonderlands quickly made him a style icon, setting the stage for a biography filled with cool adventures and quack-tastic charm.</p>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>
