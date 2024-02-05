@@ -1,3 +1,24 @@
+<?php
+// Include database connection 
+include('./config/db.php');
+// Create SQL query
+$sql = "SELECT name,favorite_foods,img_src FROM ducks";
+// Query the bd and add the result to a php array
+$result = mysqli_query($conn, $sql);
+$ducks = mysqli_fetch_all($result, MYSQLI_ASSOC);
+// free resultfrom memory and close SQL connection
+mysqli_free_result($result);
+mysqli_close($conn);
+
+// foreach($ducks as $duck) {
+//     echo $duck['name'];
+// }
+//  print_r($ducks)
+// print_r($ducks);
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,21 +37,32 @@ include('./asset/components/head.php');
         <h2></h2>
         <p>Check out our awesome collection of duck clothes. From snazzy bow ties to stylish hats, your ducks can look as cool as can be. </p>
         <div class="gallery">
-            <div class="grid-item">
-                <img src="./asset/images/Duck-Coatk - Redbubble 2024-01-31 14-19-59.png" alt="Duck Name 1">
-                <div class="grid-item-content">
-                <H2><a href="./profile.php">Duckington Frostwell</a></H2>
-                <h3>Favorite Foods</h3>
-                    <p>Aquatic Plants</p>
-                    <p>Insects</p>
-                    <p>Seeds and Grains</p>
-                    <h3>Favorite Things to Do</h3>
+
+            <?php foreach ($ducks as $duck) :  ?>
+
+                <div class="grid-item">
+                    <img src="<?php echo $duck["img_src"]; ?>" alt="Duck Name 1">
+                    <div class="grid-item-content">
+                        <H2><?php echo $duck["name"]; ?> </H2>
+                        <?php
+                        // Breaks duck food into array
+                        $food_list = explode(",", $duck["favorite_foods"]);
+                        ?>
+
+
+                        <h3>Favorite Foods</h3>
+                        <?php foreach ($food_list as $food); ?>
+                        <p><?php echo $food ?></p>
+                         <?php endforeach ?>
+
+                    <!-- <h3>Favorite Things to Do</h3>
                     <p>Strolling by the frosty pond, enjoying chilly swims.</p>
                     <h3>Favorite Clothes</h3>
-                    <p>A stylish Victorian coat to stay warm and dapper.</p>
+                    <p>A stylish Victorian coat to stay warm and dapper.</p> -->
+                    </div>
                 </div>
-            </div>
-            <div class="grid-item">
+
+                <!-- <div class="grid-item">
                 <img src="./asset/images/duck-hat.jpeg" alt="Duck Name 2">
                 <div class="grid-item-content">
                     <h2>Harper Quackley</h2>
@@ -57,9 +89,9 @@ include('./asset/components/head.php');
                     <h3>Favorite Clothes</h3>
                     <p> A chic ensemble with a stylish umbrella always at the ready for the inevitable English rain..</p>
                 </div>
-            </div>
-            
-            </div>
+            </div> -->
+
+        </div>
         </div>
     </main>
     <?php

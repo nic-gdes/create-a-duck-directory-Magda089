@@ -185,12 +185,22 @@ main {
 .grid-profile-photo {
   /* display: grid; */
   grid-area: img;
+  align-self: center;
+  align-items: center;
+}
+
+.grid-profile-photo img {
+  width: 100%;
 }
 
 .grid-profile-content {
   /* display: grid; */
   padding: 20px;
   grid-area: text;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+
 }
 
 .grid-profile-photo img {
@@ -211,7 +221,9 @@ main {
   justify-content: center;
   align-items: center;
 }
-input[type=text], select {
+
+input[type=text],
+select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -235,6 +247,7 @@ input[type=submit] {
 input[type=submit]:hover {
   background-color: #a2a030;
 }
+
 #message {
   width: 100%;
 }
