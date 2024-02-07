@@ -13,7 +13,6 @@ mysqli_close($conn);
 // foreach($ducks as $duck) {
 //     echo $duck['name'];
 // }
-//  print_r($ducks)
 // print_r($ducks);
 ?>
 
@@ -42,24 +41,24 @@ include('./asset/components/head.php');
 
                 <div class="grid-item">
                     <img src="<?php echo $duck["img_src"]; ?>" alt="Duck Name 1">
-                    <div class="grid-item-content">
-                        <H2><?php echo $duck["name"]; ?> </H2>
-                        <?php
-                        // Breaks duck food into array
-                        $food_list = explode(",", $duck["favorite_foods"]);
-                        ?>
-
-
-                        <h3>Favorite Foods</h3>
-                        <?php foreach ($food_list as $food); ?>
-                        <p><?php echo $food ?></p>
-                         <?php endforeach ?>
 
                     <!-- <h3>Favorite Things to Do</h3>
                     <p>Strolling by the frosty pond, enjoying chilly swims.</p>
                     <h3>Favorite Clothes</h3>
                     <p>A stylish Victorian coat to stay warm and dapper.</p> -->
-                    </div>
+                </div>
+                <div class="grid-item-content">
+                    <H2><?php echo $duck["name"]; ?> </H2>
+                    <?php
+                    // Breaks duck food into array
+                    $food_list = explode(",", $duck["favorite_foods"]);
+                    ?>
+
+                    <!--  -->
+                    <h3>Favorite Foods</h3>
+                    <?php foreach ($food_list as $food); ?>
+                    <p><?php echo $food ?></p>
+                <?php endforeach ?>
                 </div>
 
                 <!-- <div class="grid-item">
@@ -92,7 +91,7 @@ include('./asset/components/head.php');
             </div> -->
 
         </div>
-        </div>
+        <!-- </div> -->
     </main>
     <?php
     include('./asset/components/footer.php');
