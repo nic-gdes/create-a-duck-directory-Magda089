@@ -145,13 +145,15 @@ main {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns:  repeat(3, 1fr);
   gap: 20px;
+  /* background-color: #555; */
 }
 
 .gallery img {
   width: 100%;
-
+  height: auto;
+border-radius: 8px;
 }
 
 .grid-item {
@@ -160,6 +162,9 @@ main {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.grid-item-content {
+  padding: 20px;
+}
 
 /* .Gallery img {
   width: 100%;
