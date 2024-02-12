@@ -236,6 +236,8 @@ select {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  align-content: left;
+  align-self: left;
 }
 
 input[type=submit] {
