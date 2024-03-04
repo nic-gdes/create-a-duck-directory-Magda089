@@ -1,0 +1,11 @@
+<?php
+// Create connection to DB with mysql_connect 
+$conn = mysqli_connect("127.0.01:3308" , "2024midzikowska" ,"midzikowska972", "welearnd_gdes261_2024_midzikowska");
+
+// Verify connecion
+
+if(mysqli_connect_errno()) {
+    echo "Database error" . mysqli_connect_error();
+    exit ();
+}
+?>
