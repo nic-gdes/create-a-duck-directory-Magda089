@@ -1,3 +1,26 @@
+<?php
+$duck_is_live = false;
+
+if (isset($_GET['id'])) {
+    // Assign a vAriable to id
+    $id = htmlspecialchars($_GET['id']);
+// Get duck info from the database
+    // Connect to db
+    require('./config/db.php');
+    // Create query to select the intended duck form the db
+    $sql = "SELECT id, name, favorite_foods, bio, img_src FROM ducks WHERE id=$id";
+    $result = mysqli_query($conn, $sql);
+
+    $duck = mysqli_fetch_assoc($result);
+   
+    mysqli_free_result($result);
+    mysqli_close($conn);
+
+    // print_r($duck);
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,16 +47,14 @@ include('./asset/components/head.php');
             <div class="wrapper">
                 <div class="grid-container">
                     <div class="grid-profile-photo">
-                        <img src="./asset/images/Duck-Coatk - Redbubble 2024-01-31 14-19-59.png" alt="Duck wearing coat">
+                        <img src="<?php echo $duck['img_src'];?>" alt="Duck">
                     </div>
                     <div class="grid-profile-content">
-                            <h2>Duckington Frostwell</h2>
-                            <p><b>Favorite Food:</b> Sourdough Breadcrumbs</p>
-                            <h3>Biography</h3>
+                            <h2><?php echo $duck['name'];?></h2>
+                            <p><b>Favorite Food: </b><?php echo $duck['favorite_foods'];?></p>
+                            <h3><?php echo $duck['bio'];?></h3>
                             <!-- <p>Quackwell is always wrapped up in his favorite Victorian-style coat, ensuring he's both cozy and stylish. With a blend of timeless charm and feather-friendly warmth, this frosty fellow sets the trend for winter chic.</p> -->
-                            <p>Born in the heart of the frosty pond, Duckington Frostwell emerged into the world with a penchant for chilly elegance. </p>
-                            <p>From the earliest days, this dapper duck showcased a flair for winter fashion, donning his first Victorian-style coat at a tender age.</p>
-                            <p>Duckington's frosty charisma and love for winter wonderlands quickly made him a style icon, setting the stage for a biography filled with cool adventures and quack-tastic charm.</p>
+                            
                         </div>
                 </div>
             </div>
