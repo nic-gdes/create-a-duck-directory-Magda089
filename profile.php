@@ -17,6 +17,10 @@ if (isset($_GET['id'])) {
     mysqli_close($conn);
 
     // print_r($duck);
+
+    if(isset($duck["id"])) {
+$duck_is_live = true;
+    }
 }
 ?>
 
@@ -35,16 +39,11 @@ include('./asset/components/head.php');
     include('./asset/components/navigation.php');
     ?>
     <main>
+        <?php if ($duck_is_live) : ?>
+        <section class="profile">
         <div class="page-title">
-            <h1>DUCK PROFILE</h1>
-            <!-- <h2>Meet Quackwell Frostington!</h2> -->
-            <!-- <p>Get to know our duck models and see their cool styles. Each duck has its own look and personality. Find some inspiration for your own ducks!</p> -->
-            <!-- <h2>Biography</h2> -->
-            <!-- <p>Born in the heart of the frosty pond, Duckington Frostwell emerged into the world with a penchant for chilly elegance. </p>
-        <p>From the earliest days, this dapper duck showcased a flair for winter fashion, donning his first Victorian-style coat at a tender age.</p>
-        <p>Duckington's frosty charisma and love for winter wonderlands quickly made him a style icon, setting the stage for a biography filled with cool adventures and quack-tastic charm.</p>
-        </div> -->
-            <div class="wrapper">
+            <h1>DUCK PROFILE</h1> </div>
+        <div class="wrapper">
                 <div class="grid-container">
                     <div class="grid-profile-photo">
                         <img src="<?php echo $duck['img_src'];?>" alt="Duck">
@@ -54,11 +53,25 @@ include('./asset/components/head.php');
                             <p><b>Favorite Food: </b><?php echo $duck['favorite_foods'];?></p>
                             <h3><?php echo $duck['bio'];?></h3>
                             <!-- <p>Quackwell is always wrapped up in his favorite Victorian-style coat, ensuring he's both cozy and stylish. With a blend of timeless charm and feather-friendly warmth, this frosty fellow sets the trend for winter chic.</p> -->
-                            
+                        
                         </div>
                 </div>
             </div>
-        </div>
+
+        </section>
+        <?php else:?>
+            <section class="no-duck"></section>
+            <h1>Sorry, this duck does not exist</h1>
+        <?php endif?>
+       
+            <!-- <h2>Meet Quackwell Frostington!</h2> -->
+            <!-- <p>Get to know our duck models and see their cool styles. Each duck has its own look and personality. Find some inspiration for your own ducks!</p> -->
+            <!-- <h2>Biography</h2> -->
+            <!-- <p>Born in the heart of the frosty pond, Duckington Frostwell emerged into the world with a penchant for chilly elegance. </p>
+        <p>From the earliest days, this dapper duck showcased a flair for winter fashion, donning his first Victorian-style coat at a tender age.</p>
+        <p>Duckington's frosty charisma and love for winter wonderlands quickly made him a style icon, setting the stage for a biography filled with cool adventures and quack-tastic charm.</p>
+        </div> -->
+    
       
     </main>
     <?php
