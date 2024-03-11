@@ -84,7 +84,7 @@ if (isset($_POST['submit'])) {
         // execute query in sql
         mysqli_query($conn, $sql);
 
-        // load homepage
+        // load to homepage
         header("Location:./index.php");
     } else {
         // if errors
