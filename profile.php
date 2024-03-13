@@ -1,23 +1,14 @@
 <?php
 $duck_is_live = false;
-
+    // Connect to db
+    require('./config/db.php');
 if (isset($_GET['id'])) {
+
     // Assign a vAriable to id
     $id = htmlspecialchars($_GET['id']);
     // Get duck info from the database
-    // Connect to db
-    require('./config/db.php');
-    // Delete record - code HERE!
-    if (isset($_POST['delete'])) {
-        $id_to_delete = $_POST['id_to_delete'];
-        $delete_sql = "DELETE FROM ducks WHERE id=$id_to_delete";
-        if (mysqli_query($conn, $delete_sql)) {
-            header("Location:./index.php");
-            
-        } else {
-            echo "Error deleting record :(" . mysqli_error($conn);
-        }
-    }
+
+   
     // mysqli_close($conn); //maybe?
 
     // Create query to select the intended duck form the db
@@ -33,6 +24,17 @@ if (isset($_GET['id'])) {
 
     if (isset($duck['id'])) {
         $duck_is_live = true;
+    }
+}
+ // Delete record - code HERE!
+ if (isset($_POST['delete'])) {
+    $id_to_delete = $_POST['id_to_delete'];
+    $delete_sql = "DELETE FROM ducks WHERE id=$id_to_delete";
+    if (mysqli_query($conn, $delete_sql)) {
+        header("Location:./index.php");
+        
+    } else {
+        echo "Error deleting record :(" . mysqli_error($conn);
     }
 }
 ?>
