@@ -26,7 +26,7 @@ if (isset($_GET['id'])) {
         $duck_is_live = true;
     }
 }
- // Delete record - code HERE!
+ // Delete record - code HERE!//
  if (isset($_POST['delete'])) {
     $id_to_delete = $_POST['id_to_delete'];
     $delete_sql = "DELETE FROM ducks WHERE id=$id_to_delete";
